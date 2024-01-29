@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model tbl_BMORun2024_Barrage {
+  ID           Int      @id @default(autoincrement())
+  donor_Fname  String?  @db.VarChar(20)
+  donor_Lname  String?  @db.VarChar(20)
+  donor_Org    String?  @db.VarChar(50)
+  donor_Amount Decimal? @db.Decimal(10, 2)
+  createdAt    String   @db.VarChar(20)
+}
+
