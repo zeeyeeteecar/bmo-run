@@ -1,6 +1,6 @@
 import React from "react";
 import { redirect } from "next/navigation";
-import { prisma } from "../../../lib/db";
+import { prisma } from "../../lib/db";
 import moment from "moment";
 
 export default function BarrageAdd() {

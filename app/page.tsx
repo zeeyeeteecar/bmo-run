@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="w-screen h-screen grid place-items-center bg-slate-50">
       <Link
-        href="bmoRun"
+        href="/login"
         className="flex flex-col items-center bg-slate-600 border-gray-200 rounded-lg shadow md:flex-row h-[240px] hover:bg-gray-100 "
       >
         <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-lg ">
