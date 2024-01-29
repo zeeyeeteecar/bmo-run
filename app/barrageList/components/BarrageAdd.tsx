@@ -34,50 +34,50 @@ export default function BarrageAdd() {
         <form action={addBarrage}>
           <div className="flex flex-col space-x-2 space-y-2">
             <div>
-              <label
+              {/* <label
                 htmlFor="first_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 First name
-              </label>
+              </label> */}
               <input
                 type="text"
                 id="donor_Fname"
                 name="donor_Fname"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
-                placeholder="John"
+                placeholder="First name"
                 required
               />
             </div>
             <div>
-              <label
+              {/* <label
                 htmlFor="last_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Last name
-              </label>
+              </label> */}
               <input
                 type="text"
                 id="donor_Lname"
                 name="donor_Lname"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
-                placeholder="Doe"
+                placeholder="Last name"
                 required
               />
             </div>
             <div>
-              <label
+              {/* <label
                 htmlFor="company"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
               >
                 Company
-              </label>
+              </label> */}
               <input
                 type="text"
                 id="donor_Org"
                 name="donor_Org"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
-                placeholder="Flowbite"
+                placeholder="Company"
                 required
               />
             </div>
