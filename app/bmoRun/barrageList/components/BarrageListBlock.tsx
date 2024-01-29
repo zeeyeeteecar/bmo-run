@@ -36,7 +36,7 @@ export default async function BarrageList() {
       {barrages &&
         barrages.map((barrage: any, key: number) => {
           return (
-            <>
+            <div key={key}>
               <div className="w-full h-[50px] overflow-x-auto  border-0 flex flex-row hover:text-blue-400">
                 <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-xs  text-left  border-l-2 border-r-0 whitespace-nowrap w-[50px] hover:text-blue-400">
                   {barrage.ID}
@@ -57,7 +57,7 @@ export default async function BarrageList() {
                   {barrage.createdAt}
                 </span>
               </div>
-            </>
+            </div>
           );
         })}
     </div>
