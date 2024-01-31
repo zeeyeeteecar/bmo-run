@@ -2,6 +2,7 @@ import React from "react";
 import { redirect } from "next/navigation";
 import { prisma } from "../../lib/db";
 import moment from "moment";
+import { revalidatePath } from "next/cache";
 
 export default function BarrageAdd() {
   async function addBarrage(data: FormData) {
@@ -22,8 +23,8 @@ export default function BarrageAdd() {
         createdAt: createdAt,
       },
     });
-
-    redirect("/barrageList");
+    revalidatePath("/barrageList");
+    //redirect("/barrageList");
   }
 
   return (
