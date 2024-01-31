@@ -72,15 +72,15 @@ export default async function BarrageList() {
                     <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap w-[100px] hover:text-blue-400">
                       {barrage.donor_Amount}
                     </span>
-                    <span className="block flex-1 px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap hover:text-blue-400">
+                    <span className="block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap  w-[200px]  hover:text-blue-400">
                       {barrage.createdAt}
                     </span>
-                    <div className="block flex-1 px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap ">
+                    <div className="block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm  text-left  border-l-2 border-r-0 whitespace-nowrap ">
                       <button
                         type="submit"
                         name={"barrageID"}
                         value={barrage.ID}
-                        className="bg-blue-200 hover:bg-blue-400 h-[20px] text-white px-4 rounded-full"
+                        className="  hover:bg-blue-400 h-[20px] text-blue-200 border border-slate-200 px-4 rounded-full"
                       >
                         {" "}
                         delete{" "}

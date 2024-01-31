@@ -31,7 +31,7 @@ export default function BarrageAdd() {
     <div className="w-full h-full  border-0 flex flex-col ">
       <div className="w-full bg-white p-16">
         <form action={addBarrage}>
-          <div className="flex flex-col space-x-2 space-y-2">
+          <div className="flex flex-col space-x-2 space-y-2 p-4 border-2">
             <div>
               {/* <label
                 htmlFor="first_name"
