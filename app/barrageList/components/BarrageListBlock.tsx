@@ -31,35 +31,41 @@ export default async function BarrageList() {
         <span className="block flex-1 px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap ">
           Created At
         </span>
+        <div className="block flex-1 px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap ">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" />
+          Button
+        </div>
       </div>
 
-      {barrages &&
-        barrages.map((barrage: any, key: number) => {
-          return (
-            <div key={key}>
-              <div className="w-full h-[50px] overflow-x-auto  border-0 flex flex-row hover:text-blue-400">
-                <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm  text-left  border-l-2 border-r-0 whitespace-nowrap w-[50px] hover:text-blue-400">
-                  {barrage.ID}
-                </span>
-                <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm  text-left  border-l-2 border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
-                  {barrage.donor_Fname}
-                </span>
-                <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm  text-left  border-l-2 border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
-                  {barrage.donor_Lname}
-                </span>
-                <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
-                  {barrage.donor_Org}
-                </span>
-                <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap w-[100px] hover:text-blue-400">
-                  {barrage.donor_Amount}
-                </span>
-                <span className="block flex-1 px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap hover:text-blue-400">
-                  {barrage.createdAt}
-                </span>
+      <div className="overflow-y-auto">
+        {barrages &&
+          barrages.map((barrage: any, key: number) => {
+            return (
+              <div key={key}>
+                <div className="w-full h-[50px] overflow-x-auto  border-0 flex flex-row hover:text-blue-400">
+                  <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm  text-left  border-l-2 border-r-0 whitespace-nowrap w-[50px] hover:text-blue-400">
+                    {barrage.ID}
+                  </span>
+                  <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm  text-left  border-l-2 border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
+                    {barrage.donor_Fname}
+                  </span>
+                  <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm  text-left  border-l-2 border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
+                    {barrage.donor_Lname}
+                  </span>
+                  <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
+                    {barrage.donor_Org}
+                  </span>
+                  <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap w-[100px] hover:text-blue-400">
+                    {barrage.donor_Amount}
+                  </span>
+                  <span className="block flex-1 px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm text-left  border-l-2 border-r-0 whitespace-nowrap hover:text-blue-400">
+                    {barrage.createdAt}
+                  </span>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+      </div>
     </div>
   );
 }
