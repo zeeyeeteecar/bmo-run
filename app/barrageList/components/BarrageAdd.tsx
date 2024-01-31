@@ -28,7 +28,7 @@ export default function BarrageAdd() {
   }
 
   return (
-    <div className="w-full h-full  border-0 flex fllex-col ">
+    <div className="w-full h-full  border-0 flex flex-col ">
       <div className="w-full bg-white p-16">
         <form action={addBarrage}>
           <div className="flex flex-col space-x-2 space-y-2">
