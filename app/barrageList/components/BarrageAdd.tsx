@@ -32,7 +32,7 @@ export default function BarrageAdd() {
       <div className="w-full bg-white p-16">
         <form action={addBarrage}>
           <div className="flex flex-col space-x-2 space-y-2 p-4 border-2">
-            <div>
+            <div className="border-2 w-full">
               {/* <label
                 htmlFor="first_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -48,7 +48,7 @@ export default function BarrageAdd() {
                 required
               />
             </div>
-            <div>
+            <div className="border-2 w-full">
               {/* <label
                 htmlFor="last_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -64,7 +64,7 @@ export default function BarrageAdd() {
                 required
               />
             </div>
-            <div>
+            <div className="border-2 w-full">
               {/* <label
                 htmlFor="company"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -80,7 +80,7 @@ export default function BarrageAdd() {
               />
             </div>
 
-            <div>
+            <div className="border-2 w-full">
               <label
                 htmlFor="visitors"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -97,13 +97,14 @@ export default function BarrageAdd() {
             </div>
           </div>
 
-          <div className="flex items-start mb-6"></div>
-          <button
-            type="submit"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          >
-            Submit
-          </button>
+          <div className="flex items-start mb-6">
+            <button
+              type="submit"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

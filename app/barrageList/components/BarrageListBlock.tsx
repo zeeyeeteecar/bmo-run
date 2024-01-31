@@ -1,18 +1,26 @@
 import React from "react";
 import { prisma } from "../../lib/db";
 import { revalidatePath } from "next/cache";
+import BarrageDel from "./BarrageDel";
 
+//=============================================
 async function listBarrage() {
   "use server";
   return await prisma.tbl_BMORun2024_Barrage.findMany();
 }
 
+//=============================================
+
 async function delBarrage(data: FormData) {
   "use server";
 
+  if (!data) {
+    return;
+  }
+
   const barrageID = data.get("barrageID")?.valueOf().toString();
 
-  console.log(barrageID);
+  //console.log(barrageID);
 
   await prisma.tbl_BMORun2024_Barrage.delete({
     where: {
@@ -22,6 +30,7 @@ async function delBarrage(data: FormData) {
   revalidatePath("/barrageList");
   //redirect("/barrageList");
 }
+//=============================================
 
 export default async function BarrageList() {
   const barrages = await listBarrage();
@@ -29,8 +38,8 @@ export default async function BarrageList() {
   console.log(listBarrage());
   return (
     <div className="w-[1200px] h-[800px] bg-white text-slate-700 border-0 flex flex-col ">
-      <div className="w-full h-[50px] overflow-x-auto  border-0 flex flex-row">
-        <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-lg font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap w-[50px] ">
+      <div className="w-full h-[50px]  border-0 flex flex-row">
+        <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap w-[50px] ">
           No.
         </span>
         <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap w-[200px] ">
@@ -45,8 +54,11 @@ export default async function BarrageList() {
         <span className=" block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap w-[100px] ">
           Amount
         </span>
-        <span className="block flex-1 px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap ">
+        <span className="block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap w-[200px] ">
           Created At
+        </span>
+        <span className="block px-4 text-blue-700 bg-yellow-200 align-middle py-3 text-sm  font-semibold text-left  border-l-2 border-r-0 whitespace-nowrap w-[100px] ">
+          Total: {barrages ? barrages.length.toString() : "0"}
         </span>
       </div>
 
@@ -76,15 +88,10 @@ export default async function BarrageList() {
                       {barrage.createdAt}
                     </span>
                     <div className="block px-4 bg-gray-50 text-gray-700 align-middle py-3 text-sm  text-left  border-l-2 border-r-0 whitespace-nowrap ">
-                      <button
-                        type="submit"
-                        name={"barrageID"}
-                        value={barrage.ID}
-                        className="  hover:bg-blue-400 h-[20px] text-blue-200 border border-slate-200 px-4 rounded-full"
-                      >
-                        {" "}
-                        delete{" "}
-                      </button>
+                      <BarrageDel
+                        delBarrage={delBarrage}
+                        barrageID={barrage.ID.toString()}
+                      />
                     </div>
                   </div>
                 </div>
