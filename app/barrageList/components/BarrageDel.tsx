@@ -2,6 +2,7 @@
 import React from "react";
 
 export default function BarrageDel({ barrageID, delBarrage }: any) {
+
   function delBarrage_local(e: any) {
     const barrageID = e.target.value;
     const shouldRemove = confirm(
@@ -14,6 +15,7 @@ export default function BarrageDel({ barrageID, delBarrage }: any) {
       return null;
     }
   }
+  
   return (
     <>
       <button
