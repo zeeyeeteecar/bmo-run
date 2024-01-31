@@ -23,7 +23,7 @@ export default function BarrageAdd() {
       },
     });
 
-    redirect("/bmoRun/barrageList");
+    redirect("/barrageList");
   }
 
   return (
