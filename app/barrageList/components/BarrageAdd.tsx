@@ -17,15 +17,13 @@ export default function BarrageAdd() {
       data: {
         donor_Fname: donor_Fname,
         donor_Lname: donor_Lname,
-        donor_Org: donor_Org,
-        donor_Amount: Number(donor_Amount),
+        donor_Org: donor_Org || undefined,
+        donor_Amount: Number(donor_Amount) || undefined,
         createdAt: createdAt,
       },
     });
 
     redirect("/bmoRun/barrageList");
-
-    console.log("hi");
   }
 
   return (
