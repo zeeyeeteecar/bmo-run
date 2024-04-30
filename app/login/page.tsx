@@ -5,21 +5,10 @@ import { NextPage } from "next";
 export default async function Login() {
   async function handle_Login(data: FormData) {
     "use server";
-    const userName = data.get("userName")?.toString();
+
     const password = data.get("password")?.toString();
-    console.log(
-      "clicked",
-      userName === process.env.LOGIN_USERNAME &&
-        password === process.env.LOGIN_PASSWORD
-    );
-    if (
-      userName === process.env.LOGIN_USERNAME &&
-      password === process.env.LOGIN_PASSWORD
-    ) {
-      console.log(
-        userName === process.env.LOGIN_USERNAME &&
-          password === process.env.LOGIN_PASSWORD
-      );
+
+    if (password === process.env.LOGIN_PASSWORD) {
       redirect(`/barrageList`);
     } else {
       redirect(`/loginError`);
@@ -41,17 +30,6 @@ export default async function Login() {
 
             <div className="md:w-8/12 lg:ml-6 lg:w-5/12">
               <form action={handle_Login}>
-                <div className="relative mb-6" data-te-input-wrapper-init>
-                  <input
-                    type="text"
-                    className=" placeholder-slate-300 text-blue-600 p-2 w-full"
-                    id="userName"
-                    name="userName"
-                    placeholder="User Name"
-                    required
-                  />
-                </div>
-
                 <div className="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="password"
