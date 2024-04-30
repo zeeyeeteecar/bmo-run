@@ -2,6 +2,7 @@ import React from "react";
 import { prisma } from "../../lib/db";
 import { revalidatePath } from "next/cache";
 import BarrageDel from "./BarrageDel";
+import moment from "moment";
 
 //=============================================
 async function listBarrage() {
@@ -43,25 +44,28 @@ export default async function BarrageList() {
   return (
     <div className="w-[1200px] h-[800px] bg-white text-slate-700 border-0 flex flex-col ">
       <div className="w-full h-[50px]  border-0 flex flex-row">
-        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[50px] ">
+        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[50px] ">
           No.
         </span>
-        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[200px] ">
+        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[150px] ">
           F Name
         </span>
-        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[200px] ">
+        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[150px] ">
           Lname
         </span>
-        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[200px] ">
+        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[200px] ">
           Org
         </span>
-        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[100px] ">
+        <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[100px] ">
           Amount
         </span>
-        <span className="block px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[200px] ">
-          Created At
+        <span className="block px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[100px] ">
+          Created Date
         </span>
-        <span className="block px-4 text-blue-700 bg-yellow-200 align-middle py-3 text-sm  font-semibold text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[100px] ">
+        <span className="block px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[100px] ">
+          Time
+        </span>
+        <span className="block px-4 text-blue-700 bg-yellow-200 align-middle py-3 text-sm  font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[100px] ">
           Total: {barrages ? barrages.length.toString() : "0"}
         </span>
       </div>
@@ -73,25 +77,28 @@ export default async function BarrageList() {
               return (
                 <div key={key} className=" hover:bg-yellow-100 ">
                   <div className="w-full h-[60px] border-0 flex flex-row hover:text-blue-400">
-                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm  text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[50px] hover:text-blue-400">
+                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm  text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[50px] hover:text-blue-400">
                       {barrage.ID}
                     </span>
-                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm  text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
+                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm  text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[150px] hover:text-blue-400">
                       {barrage.donor_Fname}
                     </span>
-                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm  text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
+                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm  text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[150px] hover:text-blue-400">
                       {barrage.donor_Lname}
                     </span>
-                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
+                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[200px] hover:text-blue-400">
                       {barrage.donor_Org}
                     </span>
-                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm text-left  border-l-2  items-center border-r-0 whitespace-nowrap w-[100px] hover:text-blue-400">
+                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[100px] hover:text-blue-400">
                       {barrage.donor_Amount}
                     </span>
-                    <span className="block px-4  text-gray-700 align-middle py-3 text-sm text-left  border-l-2  items-center border-r-0 whitespace-nowrap  w-[200px]  hover:text-blue-400">
-                      {barrage.createdAt}
+                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap  w-[100px]  hover:text-blue-400">
+                      {moment(barrage.createdAt).format("YYYY-MM-DD")}
                     </span>
-                    <div className="block px-4  text-gray-700 align-middle py-3 text-sm  text-left  border-l-2  items-center border-r-0 whitespace-nowrap ">
+                    <span className="flex px-4  text-gray-700 align-middle py-3 text-sm text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap  w-[100px]  hover:text-blue-400">
+                      {moment(barrage.createdAt).format("HH:mm:ss")}
+                    </span>
+                    <div className="flex px-4  text-gray-700 align-middle py-3 text-sm  text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap ">
                       <BarrageDel
                         delBarrage={delBarrage}
                         barrageID={barrage.ID.toString()}
