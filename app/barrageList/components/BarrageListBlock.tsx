@@ -6,7 +6,11 @@ import BarrageDel from "./BarrageDel";
 //=============================================
 async function listBarrage() {
   "use server";
-  return await prisma.tbl_BMORun2024_Barrage.findMany();
+  return await prisma.tbl_BMORun2024_Barrage.findMany({
+    orderBy: {
+      ID: "desc",
+    },
+  });
 }
 
 //=============================================

@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { TiDelete } from "react-icons/ti";
 
 export default function BarrageDel({ barrageID, delBarrage }: any) {
 
@@ -25,8 +26,7 @@ export default function BarrageDel({ barrageID, delBarrage }: any) {
         className="  hover:bg-blue-400 h-[20px] text-blue-200 border border-slate-200 px-4 rounded-full"
         onClick={(e) => delBarrage_local(e)}
       >
-        {" "}
-        delete{" "}
+        <TiDelete />
       </button>
     </>
   );
