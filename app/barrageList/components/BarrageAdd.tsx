@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { prisma } from "../../lib/db";
 import moment from "moment";
 import { revalidatePath } from "next/cache";
+import Image from "next/image";
 
 export default function BarrageAdd() {
   async function addBarrage(data: FormData) {
@@ -29,9 +30,18 @@ export default function BarrageAdd() {
 
   return (
     <div className="w-full h-full  border-0 flex flex-col bg-white ">
+      <div className=" w-full h-[200px] grid flex-row place-content-center border">
+        <Image
+          src={"/bmo_run.png"}
+          className="w-[400px]"
+          width={400}
+          height={400}
+          alt={"BMO Run 2024"}
+        ></Image>
+      </div>
       <div className="w-full bg-white p-16">
         <form action={addBarrage}>
-          <div className="flex flex-col space-y-4 border-0">
+          <div className="flex flex-col space-y-8 border-0">
             {/* <label
                 htmlFor="first_name"
                 className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -42,7 +52,7 @@ export default function BarrageAdd() {
               type="text"
               id="donor_Fname"
               name="donor_Fname"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
+              className="bg-gray-50 border border-gray-200 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
               placeholder="First name"
               required
             />
@@ -56,7 +66,7 @@ export default function BarrageAdd() {
               type="text"
               id="donor_Lname"
               name="donor_Lname"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
+              className="bg-gray-50 border border-gray-200 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
               placeholder="Last name"
               required
             />
@@ -70,7 +80,7 @@ export default function BarrageAdd() {
               type="text"
               id="donor_Org"
               name="donor_Org"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
+              className="bg-gray-50 border border-gray-200 text-gray-900 text-lg  rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
               placeholder="Company"
             />
 
@@ -84,13 +94,13 @@ export default function BarrageAdd() {
               type="number"
               id="donor_Amount"
               name="donor_Amount"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
+              className="bg-gray-50 border border-gray-200 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:outline-none focus:border-blue-500 block w-full p-2.5 "
               placeholder=""
             />
 
             <button
               type="submit"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              className="bg-blue-100 border border-blue-300 text-blue-600 h hover:text-white hover:bg-blue-700 focus:ring-4 text-lg focus:outline-none focus:ring-blue-100 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center "
             >
               Submit
             </button>
