@@ -43,7 +43,7 @@ export default async function BarrageList() {
   console.log(listBarrage());
   return (
     <div className="w-[1200px] h-[800px] bg-white text-slate-700 border-0 flex flex-col ">
-      <div className="w-full h-[50px]  border-0 flex flex-row">
+      <div className="w-full h-[50px]  border-0 flex flex-row bg-slate-200">
         <span className="flex px-4  text-gray-700 align-middle py-3 text-sm font-semibold text-left  border-l-1 border-l-slate-50  items-center border-r-0 whitespace-nowrap w-[50px] ">
           No.
         </span>
