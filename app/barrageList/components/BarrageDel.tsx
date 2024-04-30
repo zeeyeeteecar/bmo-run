@@ -23,10 +23,10 @@ export default function BarrageDel({ barrageID, delBarrage }: any) {
         type="submit"
         name={"barrageID"}
         value={barrageID}
-        className="  hover:bg-blue-400 h-[20px] text-blue-200 border border-slate-200 px-4 rounded-full"
+        className="  hover:bg-blue-400 h-[30px] hover:border-blue-400 text-blue-200 border-0 border-slate-200 px-4 rounded-full"
         onClick={(e) => delBarrage_local(e)}
       >
-        <TiDelete />
+        <TiDelete width={40}  />
       </button>
     </>
   );
